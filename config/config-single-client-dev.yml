@@ -1,32 +1,35 @@
+server:
+  port: 8088
+
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/test_mybatis_db?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: 1234
-    driverClassName: com.mysql.jdbc.Driver
-    druid:
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
-      maxWait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: SELECT 1
-      testWhileIdle: true
-      filters: stat,wall,log4j
- 
-mybatis:
-  type-aliases-package: com.scnu.springcloudconfigclient.domain
-  mapper-locations: classpath*:mapper/*.xml
- 
-eureka:                                 #注册服务
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
- 
-custom:
-  username: aguest-new
-  passwd: aguest-new
-  
-profile: d23afasa-test-new
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sky-xiao/config-only-a-demo
+          username: 15574814866@163.com
+          password: xky18627315127@
+          default-label: master
+          search-paths: config
+  rabbitmq:
+    host: 47.106.131.191
+    port: 5672
+    username: admin
+    password: 123456
+
+#SpringCloud 1.5版本暴露接口，暴露/bus-refresh接口
+management:
+  security:
+    enabled: false
+    #SpringCloud 2.0.0版本以后暴露接口方式
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+#是否开启基本的鉴权，默认为true
+security:
+  basic:
+    enabled: false
