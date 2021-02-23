@@ -26,7 +26,7 @@ eureka:                                 #注册服务
       defaultZone: http://localhost:8761/eureka/
  
 custom:
-  username: guest-new
-  passwd: guest-new
+  username: aguest-new
+  passwd: aguest-new
   
 profile: d23afasa-test-new
