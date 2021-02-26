@@ -16,6 +16,8 @@ spring:
       uri: http://localhost:8088/
       profile: dev
       label: master
+    bus:
+      id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
   rabbitmq:
     host: 47.106.131.191
     port: 5672
@@ -27,5 +29,5 @@ security:
     enabled: false
 
 custom:
-  username: 999guest-new
+  username: 888guest-new
   passwd: 23guest-new
