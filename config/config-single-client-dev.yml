@@ -20,5 +20,5 @@ security:
     enabled: false
 
 custom:
-  username: aguest-new
-  passwd: aguest-new
+  username: abguest-new
+  passwd: abguest-new
