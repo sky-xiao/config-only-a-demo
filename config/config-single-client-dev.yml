@@ -29,5 +29,5 @@ security:
     enabled: false
 
 custom:
-  username: 12321321321guest-new
-  passwd: 23guest-new
+  username: guest-new
+  passwd: guest-new
